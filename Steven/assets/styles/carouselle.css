@@ -1,0 +1,9 @@
+
+  /* Classe CSS pour contrôler les dimensions des images */
+  .carousel-img {
+    width: 50px;
+    height: 60px; /* Hauteur souhaitée pour les images */
+    object-fit: cover; /* Pour maintenir l'aspect ratio et couvrir le conteneur */
+  }
+
+

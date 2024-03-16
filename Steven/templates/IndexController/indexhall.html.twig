@@ -1,0 +1,87 @@
+{# templates/lucky/number.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <style>
+     /*code css pour la gallery d'image*/
+        .gallery {
+            display: flex;
+            justify-content: center;
+        }
+        .gallery img {
+            max-width: 300px;
+            margin: 10px;
+        }
+
+    /*code css pour la banière*/
+        ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #7DCEA0; /* Couleur de fond */
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #5DAF82; /* Couleur de fond au survol */
+}
+
+    </style>
+    <title>Accueil - Laboratoire Ecophysiologie Végétale</title>
+    <link rel="stylesheet" type="text/css" href="{{ asset('styles/app.css') }}" media=”screen” />
+    
+</head>
+<body>
+
+<header>
+ <nav>
+        <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#serres">Serres</a></li>
+            <li><a href="#experience">Expérience</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact">Connexion</a></li>
+        </ul>
+    </nav>
+
+
+
+    <h1><center>Bienvenue sur le Laboratoire Ecophysiologie Végétale</center></h1>
+    <p><center><em>"Mieux comprendre les mécanismes écophysiologiques des plantes et des écosystèmes."</em></center></p>
+</header>
+<h1><center> Galerie de Photos</center></h1>
+    <div class="gallery">
+        <img src="https://serres.univ-lille.fr/fileadmin/_processed_/4/f/csm_33656_IMG_1477_cellule_3e9c81b4ae.jpg" alt="Photo 1">
+        <img src="https://serres.univ-lille.fr/fileadmin/_processed_/b/4/csm_33648_24mai2013_938924mai2013_9389230913_cellule_chaude_6eeb6a08a4.jpg" alt="Photo 2">
+        <img src="https://serres.univ-lille.fr/fileadmin/_processed_/0/f/csm_33647_IMG_1469_serre_champ_343276133b.jpg" alt="Photo 3">
+    </div>
+<section>
+    <h2><center>Qui somme nous ? </center></h2>
+    <p>Le laboratoire "Ecophysiologie Végétale" mène des recherches qui portent sur les processus écophysiologiques, les flux et les bilans de matière (carbone, azote, eau, etc.), à l’échelle de la plante et des écosystèmes, et en réponse aux facteurs du milieu.</p>
+    <p>L’objectif général est de comprendre les mécanismes biologiques et physiques des réponses de la plante et du sol aux contraintes environnementales (sécheresse, froid, chaleur, forte lumière, éléments minéraux).</p>
+    <p>Ces recherches visent également le développement de modèles, méthodes et instruments permettant de diagnostiquer et de prédire les réponses des plantes, du sol et des écosystèmes aux changements globaux, notamment climatiques.</p>
+    <p>L'approche est parfois empirique (travaux de terrain) et expérimentale (cultures en serre).</p>
+    <p>Le laboratoire dispose de plusieurs serres avec contrôle de la température et d'humidité ambiante.</p>
+</section>
+<br>
+<footer>
+    <p><center>&copy; 2024 Laboratoire Ecophysiologie Végétale. Tous droits réservés.</center></p>
+</footer>
+
+</body>
+</html>
+
