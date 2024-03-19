@@ -4,6 +4,7 @@
 //Constructeur sans parametre, conserve les valeurs par defaut
 CameraThermique::CameraThermique()
 {
+
     address=DEFAULT_ADDRESS;
     resolution_=DEFAULT_RESOLUTION;
     init();
@@ -38,26 +39,10 @@ void CameraThermique::init()
 }
 
 //Releve et affiche la temperature de chaque pixel pour une image
-void CameraThermique::getTemperature()
+float CameraThermique::getTemperature()
 {
-    sensor.measure(true); //Important ! Get NEW readings from the sensor
-    for(int y = 0; y < NUM_ROW; y++) 
-    {
-        for(int x = 0; x < NUM_COLUMN; x++) 
-        {
-            image[y][x] = getTemperature(y * NUM_COLUMN + x);
+    
 
-            //Premier test d'affichage
-            /*double tempAtXY = sensor.getTemperature(y + x * 4);
-            Serial.print(" x=");Serial.print(x);
-            Serial.print(", y=");Serial.print(y);
-            Serial.print(", temp=");Serial.println(tempAtXY);
-            if(x < 15 || y < 3) 
-            {
-                Serial.println(",");
-            }*/
-        }
-    }
 }
 
 //Calcul et affiche la moyenne des temperatures
@@ -80,9 +65,10 @@ void CameraThermique::averageTemperature()
 }
 
 
-
+/*
 //Creer l'echelle de couleur par rapport a une plage de temperature
 Vec3b CameraThermique::mapTemperatureToColor(float temperature)
 {
-    return Vec3b();
+    //return Vec3b();
 }
+*/

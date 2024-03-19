@@ -1,14 +1,14 @@
 #include "MLX90621.h"
 #include <Wire.h>
 #include <Arduino.h>
-#include <opencv2/opencv.hpp> // Pour la creation d'image avec les bonnes dimensions
+//#include <opencv2/opencv.hpp> // Pour la creation d'image avec les bonnes dimensions
 
 #define NUM_COLUMN 16
 #define NUM_ROW 4
 
-using namespace cv;
+//using namespace cv;
 
-class CameraThermique : public MLX90621
+class CameraThermique
 {
 
     private:
@@ -25,10 +25,10 @@ class CameraThermique : public MLX90621
         CameraThermique(int addressAdd);
         CameraThermique(int addressAdd, int resolutionAdd);
         void init();
-        void getTemperature();
+        float getTemperature();
         void averageTemperature();
-        Vec3b mapTemperatureToColor(float temperature);
-        void saveImage();
+        //Vec3b mapTemperatureToColor(float temperature);
+        //void saveImage();
         
 
 

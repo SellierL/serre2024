@@ -24,30 +24,50 @@
 #include <WiFi.h>
 #include "ConnexionWiFi.h"
 #include "CameraThermique.h"
-#include <opencv2/opencv.hpp> // Pour la creation d'image avec les bonnes dimensions
+//#include <opencv2/opencv.hpp> // Pour la creation d'image avec les bonnes dimensions
 #define NB_MEASURES 64
+#define NUM_COLUMN 16
+#define NUM_ROW 4
 
-ConnexionWiFi connexionS10;
-CameraThermique sensor(0x50);  //créer une instance de la classe Sensor
+ConnexionWiFi connexionS10("PlanetCampus - Prive 022752", "w5X62KrrnBVJ5");
+CameraThermique sensorPerso(0x50);  //créer une instance de la classe Sensor
+MLX90621 sensorMLX;
 
 
 void setup()
 { 
 
   Serial.begin(115200);
+
   pinMode(13, OUTPUT);
   for (int i = 0; i < 10; i++) 
   digitalWrite(13, !digitalRead(13));
   digitalWrite(13, LOW);
+
+  Serial.println(F("trying to initialize sensor..."));
+  sensorMLX.setRefreshRate(RATE_8HZ);
+  sensorMLX.setResolution(RES_17bit);
+  sensorMLX.setEmissivity(1.0);
+  sensorMLX.initialize (); // start the thermo cam
+  Serial.println(F("sensor initialized!"));
   
-  sensor.init();
+  //sensorMLX.initialize();
   connexionS10.seConnecter();
-  
 };
 
 void loop()
 {  
-  sensor.getTemperature();
-  sensor.moyenneTemperature();
+  sensorMLX.measure(true); //Important ! Get NEW readings from the sensor
+  float temperatures[64];
+  for (int i=0; i<64; i++)
+  {
+    temperatures[i]=sensorMLX.getTemperature(i);
+    Serial.print("Pixel: ");
+    Serial.print(i);
+    Serial.print(" / Temperature: ");
+    Serial.println(temperatures[i]);
+  }
+  
+  //sensor.averageTemperature();
   delay(10000);  // Attendre 10 secondes avant la prochaine lecture
 };
