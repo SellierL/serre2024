@@ -82,7 +82,9 @@ class indexController extends AbstractController
     #[Route('/login', name: 'page-de-login')]
     public function login(): Response
     {
-        return $this->render('indexController/login.html.twig');
+        // renvoi vers le controlleur login
+        return $this->redirectToRoute('login');
+        //return $this->render('login/index.html.twig');
     }
 
 
