@@ -1,16 +1,17 @@
 #include "CptHumSol.h"
 #include "regulation.h"
+#include "ConnexioAPI.h"
 
 #define AOUT_PIN 35
 #define THRESHOLD 1025
 
 CptHumSol cptHumSol(AOUT_PIN, THRESHOLD);
-//Robinet robinet;
-//Reservoir reservoir;
-//Lumiere lumiere;
-//Consigne consigne;
+Robinet robinet;
+Reservoir reservoir;
+Lumiere lumiere;
+Consigne consigne;
 
-/*
+
 void setup() {
     Serial.begin(9600);
     reservoir.arreterPompe();
