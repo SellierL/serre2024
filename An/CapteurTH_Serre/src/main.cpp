@@ -2,20 +2,24 @@
 
 #include <Arduino.h>
 #include "CapTempHum.h"
-#include "Regulation.h" 
+#include "Regulation.h"
+#include "ConnexionAPI.h" 
 
 // Déclaration de(s) variable(s)
-CapTempHum MondhT22 (DHT22_PIN, DHT22); //Création de l'objet MondhT22 de type CapTempHum
-Regulation Reguler; //Objet de Regulation
+CapTempHum MondhT22 (DHT22_PIN, DHT22); //Création objet MondhT22 de type CapTempHum
+Regulation Reguler (18,19); //Objet Regulation connecté aux pins Lampe et Ventilation
+ConnexionAPI MaConnexion; //Objet pour se connecter à API
 
 
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600); // Commence la communication en serial
   MondhT22.initCapt(); // Initialise capteur DHT22
-  //Reguler.eteindreLampe() //On le laisse éteint
-  //Reguler.enteindreVent() //On le laisse éteint
- 
+  Reguler.eteindreLampe(); //On le laisse éteint
+  Reguler.eteindreVent(); //On le laisse éteint
+  MaConnexion.connexionWiFi(); //Connexion salle 10
+  /**MaConnexion.connexionWiFi("SSID","MDP") Connexion depuis chez soi**/
+
 }
 
 void test()
@@ -33,24 +37,41 @@ void test()
   }
 }
 
+// Déclaration de la variable de température
+float temp;
+
+// Déclaration de la variable de l'humidité de l'air
+float hum;
+
+// Déclaration de la variable de consigne temp
+float consigneTemp;
+
+// Déclaration de la variable de consigne hum
+float consigneHum;
+
 void loop() {
   // put your code here, to run a loop:
-  test();
+  //test();
 
-  /*********
   // Attendre 5s entre chaques lectures
   delay(5000); // en ms
+
   // Lire Température °C
-  float temp = MondhT22.getTemp();
+  temp = MondhT22.getTemp();
+
   // Lire Humidité %
-  float hum  = MondhT22.getHum();
+  hum  = MondhT22.getHum();
+
   // Demander Consigne Température;
-  float consigneTemp = Reguler.demanderConsigneTemp();
+  consigneTemp = Reguler.demanderConsigneTemp();
+
   // Demander Consigne Humidité;
-  float consigneHum = Reguler.demanderConsigneHum();
+  consigneHum = Reguler.demanderConsigneHum();
+
+  // Régulation de température
   if(temp > consigneTemp)
   {
-    // Ne rien faire
+    // Éteindre la lampe
     Reguler.eteindreLampe();
   }
   else
@@ -59,18 +80,15 @@ void loop() {
     Reguler.allumerLampe();
   }
 
+  // Régulation d'humidité
   if(hum > consigneHum)
   {
     // Extraire air de l'humidité ambiante
-    Reguler.allumerVent();
+    Reguler.mettreEnRouteVent();
   }
   else
   {
-    // Ne rien faire
+    // Éteindre la ventilation
     Reguler.eteindreVent();
   }
-  *******/
-
-  // Attendre 2s entre chaques lectures
-  delay(2000); //en ms
 }
