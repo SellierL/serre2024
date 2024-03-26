@@ -140,6 +140,7 @@ bool ConnexionAPI::sendData(const char* jsonData)
     else 
     {
         Serial.printf("Erreur HTTP lors de l'envoi des données : %d\n", httpCode);
+        return false;
     }
 
         http.end();

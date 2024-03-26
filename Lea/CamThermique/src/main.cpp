@@ -27,9 +27,11 @@ MyApplication cameraThermique;
 void setup()
 { 
     cameraThermique.initialisation();
+    cameraThermique.alerteStressHydrique();
 };
 
 void loop()
 {  
-    cameraThermique.loopTest();
+    //cameraThermique.loopTest();
+    
 };
