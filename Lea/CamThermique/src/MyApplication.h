@@ -29,9 +29,9 @@ class MyApplication
         MyApplication();
         void initialisation();
         void setSeuil();
+        float getTemperature();
         void mapThermalDataToImage(const float* tableTemp, uint8_t* image);
         void alerteStressHydrique();
         void envoieImageAPI();
-        void loopTest();
 
 };

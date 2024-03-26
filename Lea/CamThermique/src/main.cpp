@@ -32,6 +32,5 @@ void setup()
 
 void loop()
 {  
-    //cameraThermique.loopTest();
-    
+    cameraThermique.getTemperature();
 };
