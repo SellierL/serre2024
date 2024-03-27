@@ -26,14 +26,16 @@ void MyApplication::setSeuil()
 
 }
 
-float MyApplication::getTemperature()
+float* MyApplication::getTemperature()
 {
-    sensorMLX.measure(true); //Important ! Get NEW readings from the sensor
+    //Lecture des données IR et paramètre=true donc calcul également les témpératures associées
+    sensorMLX.measure(true); //Important ! Pour avoir des nouvelles lecture du capteur
+
     //Récupére une valeur de température pour chaque pixel
     for (int i=0; i<64; i++)
     {
         tabTemp[i]=sensorMLX.getTemperature(i);
-
+        
         //Affichage pour vérifier les valeurs
         Serial.print("Pixel: ");
         Serial.print(i);
@@ -41,19 +43,48 @@ float MyApplication::getTemperature()
         Serial.println(tabTemp[i]);
     }
 
-    //Vérification du stress hydrique
-    if(tabTemp[32]<= seuil)
+    //Vérification du stress hydrique sur le pixel au centre de l'image
+    if(tabTemp[32]>= seuil)
     {
         alerteStressHydrique();
+        Serial.println("Alerte par mail envoyé !");
     }
-    return (tabTemp[64]);
 
-    delay(10000);  // Attendre 10 secondes avant la prochaine lecture
+    return (tabTemp);
 }
 
-void MyApplication::mapThermalDataToImage(const float *tableTemp, uint8_t *image)
+uint8_t* MyApplication::mapThermalDataToImage()
 {
-    
+    float temperatureMin=20.00;
+    float temperatureMax=30.00;
+
+    // Allouer de la mémoire pour le tableau d'image
+    uint8_t* image = new uint8_t[64];
+
+    // Parcourir toutes les cellules de l'image
+    for (int i = 0; i < 64; i++) 
+    {
+        // Convertir la valeur de température en couleur
+        float temp = tabTemp[i]; // Récupérer la température de la cellule i
+
+        // Appliquer une échelle de couleur en fonction de la température
+        uint8_t couleur = map(temp, temperatureMin, temperatureMax, 0, 255);
+
+        // Afficher les valeurs de couleur RGB pour chaque pixel
+        Serial.print("Pixel ");
+        Serial.print(i);
+        Serial.print(" - R: ");
+        Serial.print(couleur); // Afficher la composante Rouge
+        Serial.print(" G: ");
+        Serial.print(0); // Composante Verte (0 dans cet exemple)
+        Serial.print(" B: ");
+        Serial.println(0); // Composante Bleue (0 dans cet exemple)
+
+
+        // Affecter la couleur à l'image
+        image[i] = couleur;
+    }
+    return image;
 }
 
 //Régulation pour l'envoie d'un mail au laboratoire quand le seuil de température est dépassé pour le pixel au centre de l'image

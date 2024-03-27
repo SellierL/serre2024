@@ -27,10 +27,19 @@ MyApplication cameraThermique;
 void setup()
 { 
     cameraThermique.initialisation();
-    cameraThermique.alerteStressHydrique();
+    //cameraThermique.alerteStressHydrique();
 };
 
 void loop()
 {  
-    cameraThermique.getTemperature();
+    
+    float* temperatures=cameraThermique.getTemperature();
+   
+    uint8_t* imagePtr = cameraThermique.mapThermalDataToImage();
+
+    //Libération de la mémoire après l'utilisation
+    delete[] imagePtr;
+    
+    
+    delay(120000);  // Attendre 2 minutes avant la prochaine lecture
 };
