@@ -18,6 +18,17 @@ Si on souhaite accéder à la page de notre API il suffit simplement d’aller s
 Pour cela dans symfony 7 tout ce passe directement dans les Assets il nous suffit juste de créer dans le dossier Style un fichier CSS (Exemple : PageAcceuil.CSS)
 Après il nous suffit à remplir le fichier dans y intégrer la balise ```<Style> - -</Style>```
 
+### Utilisation des Templates (htlm.twig) :
+
+
+## Utilisation de Doctrine : 
+
+### Installation de doctrine : 
+- ```composer require symfony/orm-pack```
+- ``` composer require --dev symfony/maker-bundle```
+ 
+
+
 
 
 ### ajouter un controller :
