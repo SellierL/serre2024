@@ -9,7 +9,12 @@ Nous avons donc fait cela : ```symfony new --webapp Serre2024```.
 Créez votre premier Controller avec la commande make:controller :
 ```symfony console make:controller ConferenceController```
 
-### Creation d'entité avec composer
+### Creation d'entité avec composer : 
+```php bin/console make:entity```
+une fois que toute les entity on etait gréer nous avons besoin de faire une migration pour les syncronisers avec la base de données
+les deux commande sont les suivante : 
+- ```php bin/console make:migration``` cela permet de créer le fichier de migration.
+- ``` php bin/console doctrine:migrations:migrate``` cela permet d'appliquer la migrations.
 
 
 ## camera thermqie avec - esp32
