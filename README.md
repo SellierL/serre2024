@@ -21,6 +21,11 @@ Après il nous suffit à remplir le fichier dans y intégrer la balise ```<Style
 ### Utilisation des Templates (htlm.twig) :
 
 
+### ajouter un controller :
+Créez votre premier Controller avec la commande make:controller :
+```symfony console make:controller ConferenceController```
+
+
 ## Utilisation de Doctrine : 
 
 ### Installation de doctrine : 
@@ -28,12 +33,6 @@ Après il nous suffit à remplir le fichier dans y intégrer la balise ```<Style
 - ``` composer require --dev symfony/maker-bundle```
  
 
-
-
-
-### ajouter un controller :
-Créez votre premier Controller avec la commande make:controller :
-```symfony console make:controller ConferenceController```
 
 ### Creation d'entité avec composer : 
 ```php bin/console make:entity```
