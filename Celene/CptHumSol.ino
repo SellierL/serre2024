@@ -1,53 +1,71 @@
+//CptHumSol.ino
+
 #include "CptHumSol.h"
 #include "regulation.h"
-#include "ConnexioAPI.h"
+#include "ConnexionAPI.h"
 
 #define AOUT_PIN 35
 #define THRESHOLD 1025
 
+//déclaration des variables
 CptHumSol cptHumSol(AOUT_PIN, THRESHOLD);
 Robinet robinet;
 Reservoir reservoir;
-Lumiere lumiere;
-Consigne consigne;
-
+CptLum lumiere;
+Regulation consigne;
+float consignehumsol;
 
 void setup() {
     Serial.begin(9600);
+
+    //fermer les pompes et robinet
     reservoir.arreterPompe();
     robinet.fermerRobinet();
-    cptHumSol.setup();
+
+    //Initialisation du capteur d'humidité
+    cptHumSol.initialisation();
 }
 
+
 void loop() {
+  
+  //attendre 5secondes
   delay(5000);
+
+  // mesure de l'intensité lumineuse et déterminer s'il fait jour ou nuit
   lumiere.donnee();
-  float lum = lumiere.donnee();
-  if (lum==TRUE) {
-    consigne.demanderConsigneJour();
-    float consignehumsol = demanderConsigneJour();
+  bool Jour = lumiere.donnee();
+  // si jour on demande la consigne d'humidité du sol du jour
+  if (Jour==true) {
+    consignehumsol = consigne.demanderConsigneJour();
   }
-   else
+    // si nuit on demande la consigne d'humidité du sol de nuit
+  else
   {
-    consigne.demanderConsigneNuit();
-    float consignehumsol = demanderConsigneNuit();
+    consignehumsol = consigne.demanderConsigneNuit();
   }
 
-  float consignehumsol = demanderConsigne();
-  cptHumSol.donnee();
+  // mesure de l'humidité du sol
   float donnee = cptHumSol.donnee();
-  float reservoir = reservoir.donnee();
 
+ // mesure du niveau d'eau dan sle réservoir 
+  float NiveauReservoirOK = reservoir.donnee();
+
+  // régulation de l'humidité du sol
   if (donnee>consignehumsol) {
-reservoir.arreter();
-reservoir.arreterPompe()
+      robinet.fermerRobinet();
+      reservoir.arreterPompe();
     } 
     else {
-        if(reservoir==TRUE) {
-          reservoir.ouvrir();
+        //si il y a assez d'eau dans le réservoir
+        if(NiveauReservoirOK==true) {
+          robinet.fermerRobinet();
+          reservoir.demarrerPompe();
         }
+        //si il n'y a pas assez d'eau dans le réservoir 
         else {
-          robinet.ouvrir();
+           reservoir.arreterPompe();
+           robinet.ouvrirRobinet();
         }
     }
 }

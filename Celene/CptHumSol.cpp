@@ -1,3 +1,4 @@
+// CptHumSol.cpp
 #include "CptHumSol.h"
 
 CptHumSol::CptHumSol(int aoutPin, int threshold) {
@@ -5,20 +6,21 @@ CptHumSol::CptHumSol(int aoutPin, int threshold) {
   THRESHOLD = threshold;
 }
 
-void CptHumSol::donnee() {
-  value = analogRead(AOUT_PIN); // read the analog value from sensor
-  moisturePercentage = map(value, 1675, 4095, 100, 0); // Suppose que la valeur maximale lue par le capteur est 1023
+float CptHumSol::donnee() {
+  value = analogRead(AOUT_PIN); 
+  moisturePercentage = map(value, 1675, 4095, 0, 100); 
 }
 
-void CptHumSol::affiche() { //class affiche
-  if (moisturePercentage>95) {
-    moisturePercentage=100;
+void CptHumSol::affiche() {
+  if (moisturePercentage > 95) {
+    moisturePercentage = 100;
   }
-  Serial.print("Le sol est humide a (");
+  Serial.print("Le sol est humide à (");
   Serial.print(moisturePercentage);
   Serial.println("%)");
-  
-
-
   delay(500);
+}
+
+void CptHumSol::initialisation(){
+  Serial.begin(9600);
 }
