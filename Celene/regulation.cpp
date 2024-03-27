@@ -3,24 +3,42 @@
 #include "regulation.h"
 
 
-Robinet::Robinet() {}
+Robinet::Robinet(int PinRobinet) {
+  NumRobinet = PinRobinet;
+  pinMode(NumRobinet,OUTPUT);
+}
 
-void Robinet::fermerRobinet() {
+bool Robinet::fermerRobinet() {
+
     // Fermer le robinet
+    digitalWrite(NumRobinet, LOW);
 }
 
-void Robinet::ouvrirRobinet() {
+bool Robinet::ouvrirRobinet() {
+
     // Ouvrir le robinet
+     digitalWrite(NumRobinet, HIGH);
 }
 
-Reservoir::Reservoir() {}
-
-void Reservoir::arreterPompe() {
-    // Arrêter la pompe
+Reservoir::Reservoir(int PinPompe) {
+  NumPompe = PinPompe;
+  pinMode(NumPompe, OUTPUT);
 }
 
-void Reservoir::demarrerPompe() {
-    // Démarrer la pompe
+bool Reservoir::arreterPompe() {
+  // Démarer la pompe
+  digitalWrite(NumPompe, LOW);  
+}
+
+bool Reservoir::demarrerPompe() {
+  // Démarrer la pompe
+  digitalWrite(NumPompe, HIGH);
+}
+
+void Reservoir::initialisation() {
+  // Initatilasion du capteur
+  Wire.begin();                
+  Serial.begin(9600);       
 }
 
 float Reservoir::donnee() {

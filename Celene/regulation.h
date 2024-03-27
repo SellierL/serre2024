@@ -4,26 +4,33 @@
 #define REGULATION_H
 
 #include "Arduino.h"
+#include <Wire.h>
+
+
 
 
 class Robinet {
   public:
-    Robinet();
-    void fermerRobinet();
-    void ouvrirRobinet();
+    Robinet(int PinRobinet);
+    bool fermerRobinet();
+    bool ouvrirRobinet();
 
   private:
+  int NumRobinet;
+
     
 };
 
 class Reservoir {
   public:
-    Reservoir();
-    void arreterPompe();
-    void demarrerPompe();
+    Reservoir(int PinPompe1);
+    bool arreterPompe();
+    bool demarrerPompe();
+    void initialisation();
     float donnee();
 
   private:
+  int NumPompe;
     
 };
 

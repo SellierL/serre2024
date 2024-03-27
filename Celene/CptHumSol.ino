@@ -9,8 +9,8 @@
 
 //déclaration des variables
 CptHumSol cptHumSol(AOUT_PIN, THRESHOLD);
-Robinet robinet;
-Reservoir reservoir;
+Robinet robinet(15);
+Reservoir reservoir(21);
 CptLum lumiere;
 Regulation consigne;
 float consignehumsol;
@@ -22,8 +22,9 @@ void setup() {
     reservoir.arreterPompe();
     robinet.fermerRobinet();
 
-    //Initialisation du capteur d'humidité
+    //Initialisation du capteur d'humidité et d
     cptHumSol.initialisation();
+    reservoir.initialisation();
 }
 
 
