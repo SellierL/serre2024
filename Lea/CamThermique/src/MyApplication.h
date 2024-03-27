@@ -22,15 +22,15 @@ class MyApplication
     private:
         MLX90621 sensorMLX; //creation de l'objet sensorMLx de type MLX90621
         ConnexionAPI connexion; //Creation de l'objet connexion de type ConnexionWebService
-        float seuil=15.00; //Seuil pour le declanchement de l'alerte du stress hydrique (recup depuis API)
+        float seuil=30.00; //Seuil pour le declanchement de l'alerte du stress hydrique (recup depuis API)
         float tabTemp[64]; // Tableau des mesures de température
 
     public:
         MyApplication();
         void initialisation();
         void setSeuil();
-        float getTemperature();
-        void mapThermalDataToImage(const float* tableTemp, uint8_t* image);
+        float* getTemperature();
+        uint8_t* mapThermalDataToImage();
         void alerteStressHydrique();
         void envoieImageAPI();
 
