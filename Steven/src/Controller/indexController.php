@@ -15,7 +15,7 @@ class indexController extends AbstractController
     {
         $number = random_int(0, 100);
 
-        return $this->render('indexController/index.html.twig', [
+        return $this->render('index/index.html.twig', [
             'number' => $number,
         ]);
         /*
@@ -29,7 +29,7 @@ class indexController extends AbstractController
     {
         $number = random_int(0, 100);
 
-        return $this->render('indexController/page2.html.twig', [
+        return $this->render('index/page2.html.twig', [
             'number' => $number,
         ]);
         /*
@@ -43,7 +43,7 @@ class indexController extends AbstractController
     {
         $number = random_int(0, 100);
 
-        return $this->render('indexController/experience.html.twig', [
+        return $this->render('index/experience.html.twig', [
             'number' => $number,
         ]);
         /*
@@ -57,7 +57,7 @@ class indexController extends AbstractController
     {
         $number = random_int(0, 100);
 
-        return $this->render('indexController/creeexperience.html.twig', [
+        return $this->render('index/creeexperience.html.twig', [
             'number' => $number,
         ]);
         /*
@@ -70,7 +70,7 @@ class indexController extends AbstractController
     {
         $number = random_int(0, 100);
 
-        return $this->render('indexController/serre.html.twig', [
+        return $this->render('index/serre.html.twig', [
             'number' => $number,
         ]);
         /*
@@ -92,7 +92,7 @@ class indexController extends AbstractController
     public function temp( #[MapQueryParameter] string $temperature): Response
     {
         $humidite = random_int(0, 100);
-        return $this->render('indexController/temp.html.twig', [
+        return $this->render('index/temp.html.twig', [
             'temp' => $temperature,
             'humidite' => $humidite,
         ]);
@@ -103,7 +103,7 @@ class indexController extends AbstractController
     {
         $number = random_int(0, 100);
 
-        return $this->render('indexController/dashboard.html.twig', [
+        return $this->render('index/dashboard.html.twig', [
             'number' => $number,
         ]);
         /*

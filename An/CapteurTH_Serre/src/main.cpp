@@ -44,10 +44,10 @@ float temp;
 float hum;
 
 // Déclaration de la variable de consigne temp
-float consigneTemp;
+float consigneTemp; //permet de voir la temp via API
 
 // Déclaration de la variable de consigne hum
-float consigneHum;
+float consigneHum; //permet de voir l'hum via API
 
 void loop() {
   // put your code here, to run a loop:
@@ -68,7 +68,10 @@ void loop() {
   // Demander Consigne Humidité;
   consigneHum = Reguler.demanderConsigneHum();
 
-  // Régulation de température
+  //Affiche les consignes de temp et hum
+  Reguler.afficheConsigne();
+
+  // Régulation de la température ambiante
   if(temp > consigneTemp)
   {
     // Éteindre la lampe
@@ -80,7 +83,7 @@ void loop() {
     Reguler.allumerLampe();
   }
 
-  // Régulation d'humidité
+  // Régulation de l'humidité de l'air ambiant
   if(hum > consigneHum)
   {
     // Extraire air de l'humidité ambiante
