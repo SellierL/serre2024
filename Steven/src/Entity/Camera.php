@@ -14,11 +14,18 @@ class Camera
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(type: Types::BLOB)]
-    private $Image;
-
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $date = null;
+
+    #[ORM\Column(type: Types::TIME_MUTABLE)]
+    private ?\DateTimeInterface $heure = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $image = null;
+
+    #[ORM\ManyToOne(inversedBy: 'cameras')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?serre $serre = null;
 
     public function getId(): ?int
     {
@@ -27,12 +34,12 @@ class Camera
 
     public function getImage()
     {
-        return $this->Image;
+        return $this->image;
     }
 
     public function setImage($Image): static
     {
-        $this->Image = $Image;
+        $this->Image = $image;
 
         return $this;
     }
@@ -45,6 +52,30 @@ class Camera
     public function setDate(\DateTimeInterface $date): static
     {
         $this->date = $date;
+
+        return $this;
+    }
+
+    public function getHeure(): ?\DateTimeInterface
+    {
+        return $this->heure;
+    }
+
+    public function setHeure(\DateTimeInterface $heure): static
+    {
+        $this->heure = $heure;
+
+        return $this;
+    }
+
+    public function getSerre(): ?serre
+    {
+        return $this->serre;
+    }
+
+    public function setSerre(?serre $serre): static
+    {
+        $this->serre = $serre;
 
         return $this;
     }
