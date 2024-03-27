@@ -8,6 +8,18 @@ L'application est programmée en php. Elle est basée sur le framwork **symfony 
 Nous avons donc fait cela : ```symfony new --webapp Serre2024```.
 3. Installation de différents composants tels que PHP, Composer, Doctrine…
 
+### Lancement du service :
+``` cd C:\Users\Utilisateur\Downloads\symfony-cli_windows_amd64\serre2024>..\symfony server:start```
+
+#### Accédez à la page de l'API : 
+Si on souhaite accéder à la page de notre API il suffit simplement d’aller sur un moteur de recherche et taper cette URL dans le navigateur : http://localhost:8000/mapage/number soit pour nous  http://172.18.10.42:8000/index . Ce qui nous fait arriver sur la page d'accueil. 
+
+### Intégration du CSS & du CSS :
+Pour cela dans symfony 7 tout ce passe directement dans les Assets il nous suffit juste de créer dans le dossier Style un fichier CSS (Exemple : PageAcceuil.CSS)
+Après il nous suffit à remplir le fichier dans y intégrer la balise ```<Style> - -</Style>```
+
+
+
 ### ajouter un controller :
 Créez votre premier Controller avec la commande make:controller :
 ```symfony console make:controller ConferenceController```
