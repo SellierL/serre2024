@@ -1,0 +1,135 @@
+{# templates/lucky/number.html.twig #}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Laboratoire Ecophysiologie Végétale</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Custom Styles -->
+  <link rel="stylesheet" type="text/css" href="{{ asset('styles/style.css') }}"  />
+
+<style>/*css carte experience */
+.card {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.card-img {
+  flex: 0 0 20%;
+  max-width: 20%;
+}
+.card-content {
+  flex: 1;
+  padding: 20px;
+  column-count: 2; /* Diviser le contenu en deux colonnes */
+  column-gap: 20px; /* Espacement entre les colonnes */
+}
+.card-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.card-text {
+  font-size: 1em;
+}</style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+    <img src="https://png.pngtree.com/png-vector/20220625/ourmid/pngtree-laboratory-logo-template-lab-vector-png-image_5416964.png" alt="Photo 1" class="img-fluid" style="max-height: 80px;">
+</a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Menu
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/experience">Experience</a>
+          <a class="dropdown-item" href="/serre">Serres</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Another Action</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ path('page-de-login') }}">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Connexion</button>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br>
+    <h1><center>Cette page est dédié au Expérience du laboratoire</center></h1>
+   
+</header>
+
+<p>Ici vous allez pouvoir retrouver toute les experience</p>
+<center><li class="nav-item">
+  <a class="nav-link" href="/creeexperience">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Crée une experience</button>
+  </a>
+</li></center>
+<br>
+<center><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Voir les experience en cours</button></center>
+<br>
+
+
+<div class="card">
+    <img src="https://planet-vie.ens.fr/sites/default/files/2021-02/exp12b.gif" alt="Image" class="card-img">
+    <div class="card-content">
+        <h3 class="card-title">Experience N°1</h3><br> 
+        <p class="card-text">Suspendisse id neque ut nulla facilisis consequat. Nullam vehicula, tortor in tristique interdum, ligula odio aliquet magna, at malesuada magna dui eget purus.</p>
+    </div>
+</div>
+<div class="card">
+    <img src="https://www.alloschool.com/files/premium/svt/1bac/u2/s6/img3.jpg" alt="Image" class="card-img">
+    <div class="card-content">
+        <h3 class="card-title">Experience N°2</h3>
+        <h3>Étude de la phototropisme :</h3>
+        <p class="card-text">température : 28°C</p>
+
+    </div>
+</div>
+<div class="card">
+    <img src="https://cdn.futura-sciences.com/cdn-cgi/image/width=1024,quality=60,format=auto/sources/images/Bruno-Moulia-plantes-INRA.jpg" alt="Image" class="card-img">
+    <div class="card-content">
+        <h3 class="card-title">Experiene N°3</h3>
+        <p class="card-text">Suspendisse id neque ut nulla facilisis consequat. Nullam vehicula, tortor in tristique interdum, ligula odio aliquet magna, at malesuada magna dui eget purus.</p>
+    </div>
+    
+</div>
+
+<br>
+<footer>
+    <p><center>&copy; 2024 Laboratoire Ecophysiologie Végétale. Tous droits réservés.</center></p>
+</footer>
+
+</body>
+</html>
+

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Your Website</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Custom Styles -->
+  <link rel="stylesheet" type="text/css" href="{{ asset('styles/style.css') }}"  />
+
+
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Laboratoire Ecophysiologie Végétale</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Menu
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Submenu 1</a>
+          <a class="dropdown-item" href="#">Submenu 2</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Another Action</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ path('page-de-login') }}">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Featured Articles Section -->
+<section class="container mt-5">
+  <div class="row">
+    <div class="col-lg-4 mb-4">
+      <div class="card">
+        <img src="https://serres.univ-lille.fr/fileadmin/_processed_/4/f/csm_33656_IMG_1477_cellule_3e9c81b4ae.jpg" class="card-img-top" alt="Article Image">
+        <div class="card-body">
+          <h5 class="card-title">Les merveilles de la physiologie végétale au SuperLabVeg</h5>
+          <p class="card-text">Bienvenue au SuperLabVeg, où le monde de la physiologie végétale prend vie ! Notre laboratoire a pour mission de percer les mystères du fonctionnement des plantes, de leur croissance et de leur réaction à leur environnement. Dans cet article, nous vous proposons de découvrir nos recherches de pointe et nos expériences innovantes. De l'étude de la photosynthèse à l'exploration des interactions entre les plantes et les microbes, notre équipe de chercheurs se passionne pour l'avancement de notre compréhension de la vie végétale. Rejoignez-nous pour découvrir l'incroyable travail réalisé à SuperLabVeg et son impact sur les sciences agricoles, environnementales et biologiques.</p>
+          <a href="#" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 mb-4">
+      <div class="card">
+        <img src="https://placeimg.com/400/200/arch" class="card-img-top" alt="Article Image">
+        <div class="card-body">
+          <h5 class="card-title">Cultiver l'excellence : Un aperçu du laboratoire de physiologie végétale SuperLabVeg</h5>
+          <p class="card-text">Plongez au cœur de l'exploration botanique au laboratoire de physiologie végétale SuperLabVeg. Notre établissement est un centre de curiosité scientifique, où chercheurs et étudiants collaborent pour explorer les mécanismes complexes qui régissent la vie des plantes. Qu'il s'agisse d'étudier le rôle des hormones dans la croissance des plantes ou de plonger dans le monde fascinant des réactions au stress, notre laboratoire est à l'avant-garde des découvertes révolutionnaires. Dans cet article, découvrez les équipements de pointe, l'équipe dévouée et les projets de recherche à fort impact qui font du laboratoire de physiologie végétale de [votre université/institution] un modèle d'excellence dans le domaine.</p>
+          <a href="#" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 mb-4">
+      <div class="card">
+        <img src="https://placeimg.com/400/200/tech" class="card-img-top" alt="Article Image">
+        <div class="card-body">
+          <h5 class="card-title">Démasquer les secrets de la nature : le laboratoire de physiologie végétale de SuperLabVeg</h5>
+          <p class="card-text">La nature a son propre langage et, à SuperLabVeg, nous maîtrisons les conversations silencieuses entre les plantes et leur environnement. Notre laboratoire de physiologie végétale est un havre de paix pour ceux qui cherchent à décoder les signaux, les processus et les adaptations qui définissent la vie des plantes. Dans cet article, nous vous invitons à explorer l'éthique de notre laboratoire, où les scientifiques et les étudiants se livrent à des expériences pratiques et repoussent les limites de la connaissance. Qu'il s'agisse d'étudier les relations hydriques des plantes ou de comprendre comment elles s'adaptent aux changements climatiques, notre équipe s'engage à démêler les complexités du monde botanique. Rejoignez-nous pour un voyage de découverte à SuperLabVeg.</p>
+          <a href="#" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bootstrap and Font Awesome Scripts -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
