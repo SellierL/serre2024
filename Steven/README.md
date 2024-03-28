@@ -10,9 +10,6 @@ Nous avons donc fait cela : ```symfony new --webapp Serre2024```.
 Créez votre premier Controller avec la commande make:controller :
 ```symfony console make:controller ConferenceController```
 
-> Voici un exemple de controlleur :
-![Controlleur du Dashboard]("C:\Users\Utilisateur\Desktop\serre2024\Capture d'écran 2024-03-28 093436.png")
-
 
 ## Base de données & Symfony :
 
