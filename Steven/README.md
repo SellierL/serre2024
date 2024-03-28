@@ -1,5 +1,5 @@
 
-# Documentation du projet serre 2024
+# Documentation du projet serre 2024 🌿 
 ## application web et api
 L'application est programmée en php. Elle est basée sur le framwork **symfony 7**.
 ## Création d’une nouvelle application Symfony :
@@ -24,7 +24,7 @@ Pour l'installation de doctrine nous allons avoir besoin de rentée c'est deux c
 ### Creation d'entité : 
 ```php bin/console make:entity```
 
-### Migration des données vers la base :
+### Migration des données vers la base 💾:
 
 - ```php bin/console make:migration``` cela permet de créer le fichier de migration.
 - ``` php bin/console doctrine:migrations:migrate``` cela permet d'appliquer la migrations. 
