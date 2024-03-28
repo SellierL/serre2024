@@ -46,8 +46,4 @@ ManyToOne``` Ce ci va permettre de crée la relation entre les deux tables que n
 
 > Une fois que notre configuration terminer nous allons retouver tout cela dans l'onglet **Entity** dans visual studio code. 
 
-   ______
-  / ____/___  ____ ___  ____  ____  ________  _____
- / /   / __ \/ __ `__ \/ __ \/ __ \/ ___/ _ \/ ___/
-/ /___/ /_/ / / / / / / /_/ / /_/ (__  )  __/ /
-\____/\____/_/ /_/ /_/ .___/\____/____/\___/_/
+
