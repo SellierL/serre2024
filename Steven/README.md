@@ -34,8 +34,5 @@ Pour l'installation de doctrine nous allons avoir besoin de rentée c'est deux c
 ### Utiliser des relations entre les Tables : 
 Pour cela nous allons utilisé la commande ```ManyToOne```, celle ci nous permet de créer une relation avec une clef primaire entre deux table 🗝 
 
-une fois que nous avons créer l'entité nous devons refaire ```php bin/console make:entity``` mais cette fois si nous allons y faire une Upgrade car elle a deja etait créer. Quelle que ligne plus bas nous allons tomber sur cette ligne ```Field type (enter ? to see all types) [string]:
-> relation``` 
-
-c'est a partir de la que nous allons commencer la mise en place de la relation. 
+une fois que nous avons créer l'entité nous devons refaire ```php bin/console make:entity``` mais cette fois si nous allons y faire une Upgrade car elle a deja etait créer. Quelle que ligne plus bas nous allons tomber sur cette ligne ```Field type (enter ? to see all types) [string]: relation``` c'est a partir de la que nous allons commencer la mise en place de la relation. 
 
