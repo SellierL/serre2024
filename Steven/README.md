@@ -6,6 +6,9 @@
 ```symfony new --webapp my_project```
 Nous avons donc fait cela : ```symfony new --webapp Serre2024```. 
 
+#### Lancement du service : 
+Pour faire le lancemement du service nous avons besoin de taper dans l'inviter de commande de l'ordintaur les deux commande suivante : 
+
 ### ajouter un controller :
 Créez votre premier Controller avec la commande make:controller :
 ```symfony console make:controller ConferenceController```
@@ -42,3 +45,9 @@ ManyToOne``` Ce ci va permettre de crée la relation entre les deux tables que n
 
 
 > Une fois que notre configuration terminer nous allons retouver tout cela dans l'onglet **Entity** dans visual studio code. 
+
+   ______
+  / ____/___  ____ ___  ____  ____  ________  _____
+ / /   / __ \/ __ `__ \/ __ \/ __ \/ ___/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ (__  )  __/ /
+\____/\____/_/ /_/ /_/ .___/\____/____/\___/_/
