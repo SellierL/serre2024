@@ -1,7 +1,7 @@
 
 # 🌿 Documentation du projet serre 2024 🌿 
 ## application web et api
-L'application est programmée en php. Elle est basée sur le framwork **symfony 7**.
+> L'application est programmée en php. Elle est basée sur le framwork **symfony 7**.
 ## Création d’une nouvelle application Symfony :
 ```symfony new --webapp my_project```
 Nous avons donc fait cela : ```symfony new --webapp Serre2024```. 
