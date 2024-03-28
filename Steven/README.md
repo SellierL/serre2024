@@ -16,7 +16,7 @@ Créez votre premier Controller avec la commande make:controller :
 
 Pour l'installation de doctrine nous allons avoir besoin de rentée c'est deux commande : 
 - ```composer require symfony/orm-pack```
-- ```composer require --dev symfony/maker-bundle````
+- ```composer require --dev symfony/maker-bundle```
 
 ### Création de la base de donnée :
 ```php bin/console doctrine:database:create``` Cette commande nous permet de crée la base de donnée, pour pouvoir la visualiser de notre coter nous utilison debeaver. Dans notre cas la base de donnée portera le non de **serre2024**
