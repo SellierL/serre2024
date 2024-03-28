@@ -23,7 +23,7 @@ Pour l'installation de doctrine nous allons avoir besoin de rentée c'est deux c
 
 ### Creation d'entité : 
 ```php bin/console make:entity```
-```$ php bin/console make:entity Category
+```$ php bin/console make:entity Category````
 
 ### Migration des données vers la base 💾:
 
