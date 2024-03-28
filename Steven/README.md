@@ -15,5 +15,7 @@ Créez votre premier Controller avec la commande make:controller :
 une fois que toute les entity on etait gréer nous avons besoin de faire une migration pour les syncronisers avec la base de données
 les deux commande sont les suivante : 
 - ```php bin/console make:migration``` cela permet de créer le fichier de migration.
-- ``` php bin/console doctrine:migrations:migrate``` cela permet d'appliquer la migrations.
+- ``` php bin/console doctrine:migrations:migrate``` cela permet d'appliquer la migrations. 
+
+d
 

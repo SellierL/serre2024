@@ -41,6 +41,8 @@ les deux commande sont les suivante :
 - ```php bin/console make:migration``` cela permet de créer le fichier de migration.
 - ``` php bin/console doctrine:migrations:migrate``` cela permet d'appliquer la migrations.
 
+lkkmljlkjljk
+
 
 ## camera thermqie avec - esp32
 ## capteur humidité de l'air et température ambiante (DHT22) - esp32
