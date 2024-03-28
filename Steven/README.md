@@ -10,6 +10,10 @@ Nous avons donc fait cela : ```symfony new --webapp Serre2024```.
 Créez votre premier Controller avec la commande make:controller :
 ```symfony console make:controller ConferenceController```
 
+> Voici un exemple de controlleur :
+![Controlleur du Dashboard]("C:\Users\Utilisateur\Desktop\serre2024\Capture d'écran 2024-03-28 093436.png")
+
+
 ## Base de données & Symfony :
 
 ### Installation de Doctrine : 
@@ -36,3 +40,8 @@ Pour cela nous allons utilisé la commande ```ManyToOne```, celle ci nous permet
 
 une fois que nous avons créer l'entité nous devons refaire ```php bin/console make:entity``` mais cette fois si nous allons y faire une Upgrade car elle a deja etait créer. Quelle que ligne plus bas nous allons tomber sur cette ligne ```Field type (enter ? to see all types) [string]: relation``` c'est a partir de la que nous allons commencer la mise en place de la relation. 
 
+Arriver sur cette ligne nous devons aplliquer ce ci : ```Relation type? [ManyToOne, OneToMany, ManyToMany, OneToOne]:
+ManyToOne```` Ce ci va permettre de crée la relation entre les deux tables que nous aurrons choisis.
+
+
+> Une fois que notre configuration terminer nous allons retouver tout cela dans l'onglet **Entity** dans visual studio code. 
