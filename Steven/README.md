@@ -1,7 +1,7 @@
 
 # 🌿 Documentation du projet serre 2024 🌿 
 ## application web et api
-> L'application est programmée en php. Elle est basée sur le framwork **symfony 7**.
+> Symfony est un framework PHP qui facilite le développement d'API Web. Les API Web permettent aux applications de communiquer entre elles de manière efficace et standardisée. Grâce à Symfony, les développeurs peuvent créer rapidement des API robustes et sécurisées en utilisant des composants intégrés pour gérer les requêtes HTTP, les routes, la validation des données et la sécurité. Symfony offre également des bundles spécialisés, comme FOSRestBundle et API Platform, qui simplifient encore plus le processus de création d'API RESTful et GraphQL. En utilisant Symfony, vous pouvez rapidement mettre en place des API Web performantes pour répondre aux besoins de votre application.
 ## Création d’une nouvelle application Symfony :
 ```symfony new --webapp my_project```
 Nous avons donc fait cela : ```symfony new --webapp Serre2024```. 
