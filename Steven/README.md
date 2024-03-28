@@ -23,10 +23,12 @@ Pour l'installation de doctrine nous allons avoir besoin de rentée c'est deux c
 
 ### Creation d'entité : 
 ```php bin/console make:entity```
-une fois que toute les entity on etait gréer nous avons besoin de faire une migration pour les syncronisers avec la base de données
-les deux commande sont les suivante : 
+
+### Migration des données vers la base :
+
 - ```php bin/console make:migration``` cela permet de créer le fichier de migration.
 - ``` php bin/console doctrine:migrations:migrate``` cela permet d'appliquer la migrations. 
 
 
-
+### Utiliser des relations entre les Tables : 
+Pour cela nous allons utilisé la commande ```ManyToOne```, celle ci nous permet de créer une relation avec une clef primaire entre deux table 🗝 
