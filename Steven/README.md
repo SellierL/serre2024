@@ -23,6 +23,23 @@ Pour l'installation de doctrine nous allons avoir besoin de rentée c'est deux c
 
 ### Creation d'entité : 
 ```php bin/console make:entity```
+```$ php bin/console make:entity Category
+
+New property name (press <return> to stop adding fields):
+> **camera**
+
+Field type (enter ? to see all types) [string]:
+> **string**
+
+Field length [255]:
+> **255**
+
+Can this field be null in the database (nullable) (yes/no) [no]:
+> **no**
+
+New property name (press <return> to stop adding fields):
+>
+(press enter again to finish)```
 
 ### Migration des données vers la base 💾:
 
